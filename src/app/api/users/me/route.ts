@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDataFromToken } from "../verifyemail/getDatafromToken";
+import { getDataFromToken } from "../../../../helpers/getDatafromToken";
 import User from "@/models/userModel";
 
 export async function POST(request: NextRequest) {
