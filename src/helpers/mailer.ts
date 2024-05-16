@@ -9,10 +9,10 @@ export const sendMail = async({email, emailType, userId}: any) => {
         const hashedToken = await bcryptjs.hash(userId.toString(), 10);
         console.log(hashedToken)
 
-        console.log("MAIL:", email)
-        console.log("USERID:", userId)
-        console.log("emailType:", emailType)
-        console.log(typeof emailType)
+        // console.log("MAIL:", email)
+        // console.log("USERID:", userId)
+        // console.log("emailType:", emailType)
+        // console.log(typeof emailType)
 
         if(emailType == "VERIFY"){
             await User.findByIdAndUpdate(userId, {$set:{

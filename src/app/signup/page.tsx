@@ -2,13 +2,13 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
-import { useRouter } from "next/router"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 const page = () => {
 
-  // const router = useRouter()
+  const router = useRouter()
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
     email: "",
@@ -25,7 +25,7 @@ const page = () => {
       setLoading(true)
       const response = await axios.post("/api/users/signup", user)
       console.log(response.data)
-      // router.push("/login")
+      router.push("/login")
     } catch (error) {
       console.log("Signup Failed", error)
     }
@@ -44,6 +44,7 @@ const page = () => {
       <div className="flex justify-center items-center min-h-[85vh] bg-gray-100 dark:bg-[#334d5e] px-5 md:py-0 py-10">
         {/* <form className="bg-white dark:bg-[#153448] shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-1/2 w-full"> */}
         <div className="bg-white dark:bg-[#153448] shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-1/2 w-full">
+          <h3 className="text-center text-2xl">{loading ? "Processing" : "Signup"}</h3>
           <div className="mb-6">
             <label htmlFor="name" className="block text-gray-700 font-bold mb-2 dark:text-[#DFD0B8]">Name</label>
             <input id="name" name='name' type="text" value={user.username} onChange={(e) => setUser({...user, username: e.target.value})} placeholder="Enter your Name" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
@@ -62,7 +63,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <button type="submit" className="bg-blue-500 dark:bg-[#DFD0B8] dark:text-[#153448] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">{buttonDisabled ? "Proccs" : "Signup"}</button>
+            <button type="submit" onClick={onSignUp} className="bg-blue-500 dark:bg-[#DFD0B8] dark:text-[#153448] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">{buttonDisabled ? "No Signup" : "Signup"}</button>
           </div>
 
           <h6 className='mt-5 dark:text-[#DFD0B8]'>Already Have an <Link href={"/login"} className='text-[#3b82f6]'>Account</Link></h6>
