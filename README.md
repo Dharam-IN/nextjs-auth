@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.JS Auth
 
-## Getting Started
+## Description
+This Next.js project provides functionalities for user authentication including login, signup, email verification, and profile management. The project utilizes Next.js for the frontend, with React components, and Express.js for the backend. MongoDB is used as the database for storing user information. Mailtrap is integrated for email functionalities.
 
-First, run the development server:
+## Features
+- User Authentication: Allows users to register, login, and manage their profiles.
+- Email Verification: Sends verification emails for newly registered users.
+- Profile Management: Users can update their profiles.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
+- **Next.js:** Frontend development with React components.
+- **Express.js:** Backend framework for handling server-side operations.
+- **MongoDB:** NoSQL database for storing user data.
+- **Mailtrap:** Used for testing email functionalities.
+- **bcryptjs:** For hashing passwords.
+- **nodemailer:** For sending emails.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
+1. **Signup:** Navigate to the signup page, enter your details, and click "Signup" to create a new account.
+2. **Login:** After signup, navigate to the login page, enter your credentials, and click "Login" to access your account.
+3. **Email Verification:** Upon signup, check your email for a verification link and click it to verify your email address.
+4. **Profile Management:** Once logged in, navigate to the profile page to update your information.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Run
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Install dependencies using `npm install`.
+4. Start the development server using `npm run dev`.
+5. Access the application in your web browser at `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Credits
+- Project developed by Dharam
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to customize this README file further according to your project's specifics and preferences.
